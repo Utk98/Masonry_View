@@ -15,58 +15,13 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class StandardGrid extends StatelessWidget {
-
-  @override
-  Widget build(BuildContext context) {
-    return GridView.builder(
-      itemCount: imageList.length,
-      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 3,
-        mainAxisSpacing: 8,
-        crossAxisSpacing: 8,
-      ),
-      itemBuilder: (context, index) => ImageCard(
-        imageData: imageList[index],
-      ),
-    );
-  }
-}
-
+// class StandardGrid extends StatelessWidget {
 class StandardStaggeredGrid extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
     return MasonryGridView.count(
       crossAxisCount: 3,
-      itemBuilder: (context, index) => ImageCard(
-        imageData: imageList[index],
-      ),
-    );
-  }
-}
-
-class InstagramSearchGrid extends StatelessWidget {
-
-  @override
-  Widget build(BuildContext context) {
-    return MasonryGridView.count(
-      crossAxisCount: 3,
-      itemBuilder: (context, index) => ImageCard(
-        imageData: imageList[index],
-      ),
-    );
-  }
-}
-
-class PinterestGrid extends StatelessWidget {
-
-  @override
-  Widget build(BuildContext context) {
-    return MasonryGridView.builder(
-      gridDelegate: SliverSimpleGridDelegateWithMaxCrossAxisExtent(
-        maxCrossAxisExtent: 2,
-      ),
       itemBuilder: (context, index) => ImageCard(
         imageData: imageList[index],
       ),
